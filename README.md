@@ -1,4 +1,3 @@
-# VIS-Airlines-Sim
 <!DOCTYPE html>
 <html lang="pl">
 <head>
