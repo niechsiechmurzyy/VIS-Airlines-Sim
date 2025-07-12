@@ -1,0 +1,30 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const flightSelectionSection = document.getElementById('flight-selection');
+    const paymentSimulationSection = document.getElementById('payment-simulation');
+    const flightForm = document.getElementById('flight-form');
+    const paymentButton = paymentSimulationSection.querySelector('button');
+
+    // Obsługa formularza wyszukiwania lotów
+    if (flightForm) {
+        flightForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Zapobiega domyślnemu przeładowaniu strony
+            alert('Wyszukiwanie lotów dla VIS Airlines zakończone! Przechodzimy do symulacji płatności.');
+
+            // Ukryj sekcję wyboru lotu i pokaż sekcję płatności
+            flightSelectionSection.style.display = 'none';
+            paymentSimulationSection.style.display = 'block';
+        });
+    }
+
+    // Obsługa przycisku płatności
+    if (paymentButton) {
+        paymentButton.addEventListener('click', () => {
+            alert('Symulacja płatności dla VIS Airlines zakończona pomyślnie! Bilet został "kupiony".');
+            // Tutaj w przyszłości możemy dodać więcej logiki po "zakupie"
+        });
+    }
+
+    // Początkowe ukrywanie/pokazywanie sekcji
+    if (flightSelectionSection) flightSelectionSection.style.display = 'block';
+    if (paymentSimulationSection) paymentSimulationSection.style.display = 'none';
+});
